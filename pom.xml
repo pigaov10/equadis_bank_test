@@ -11,5 +11,6 @@
 
     <modules>
         <module>account</module>
+        <module>common</module>
     </modules>
 </project>
