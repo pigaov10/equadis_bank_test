@@ -1,5 +1,7 @@
 package com.equadis.api.controllers;
 
+import com.equadis.api.commands.OpenAccountCommand;
+import com.equadis.infrastructure.BaseCommand;
 import com.equadis.infrastructure.CommandDispatcher;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +20,7 @@ public class OpenAccountController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> openAccount(@RequestBody Object command) {
+    public ResponseEntity<Object> openAccount(@RequestBody OpenAccountCommand command) {
         commandDispatcher.send(command);
         return ResponseEntity.ok().body("Returning an object");
     }
