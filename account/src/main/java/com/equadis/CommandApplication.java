@@ -1,6 +1,6 @@
 package com.equadis;
 
-import com.equadis.api.commands.CommandHandler;
+import com.equadis.api.commands.handler.CommandHandler;
 import com.equadis.api.commands.OpenAccountCommand;
 import com.equadis.infrastructure.CommandDispatcher;
 import jakarta.annotation.PostConstruct;
