@@ -31,11 +31,25 @@ services:
       - KAFKA_CFG_MESSAGE_MAX_BYTES=1048588
     depends_on:
       - zookeeper
-
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: read_database
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - bank-network
 volumes:
   zookeeper_data:
     driver: local
   kafka_data:
+    driver: local
+  postgres_data:
     driver: local
 networks:
   bank-network:
