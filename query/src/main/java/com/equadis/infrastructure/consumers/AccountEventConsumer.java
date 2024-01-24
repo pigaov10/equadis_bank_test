@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountEventConsumer {
     @KafkaListener(topics = "AccountOpenedEvent", groupId = "bankaccConsumer", containerFactory = "kafkaListenerContainerFactory")
-    public void consume(@Payload AccountOpenedEvent event, Acknowledgment acknowledgment) {
+    public void consume(@Payload AccountOpenedEvent event) {
         System.out.println("Event is: " + event);
-        acknowledgment.acknowledge();
     }
 }
