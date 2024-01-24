@@ -18,12 +18,10 @@ public class AccountEventStore implements EventStore {
     public AccountEventStore(BankAccountEventStoreRepository bankAccountEventRepository) {
         this.bankAccountEventStoreRepository = bankAccountEventRepository;
     }
-
     @Override
     public void saveEvents(String aggregateId, BaseEvent event, int expectedVersion) {
         bankAccountEventStoreRepository.save(BankAccountEventModel.builder()
                 .id(UUID.randomUUID().toString())
-                .aggregateIdentifier(event.getId())
                 .timeStamp(new Date())
                 .aggregateIdentifier(aggregateId)
                 .aggregateType(AccountAggregate.class.getTypeName())

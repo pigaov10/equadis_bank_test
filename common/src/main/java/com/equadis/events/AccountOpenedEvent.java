@@ -1,17 +1,24 @@
 package com.equadis.events;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@SuperBuilder
+import lombok.Getter;
+
+@Getter
 public class AccountOpenedEvent extends BaseEvent {
-    private String id;
-    private String accountType;
-    private double initialAmount;
+    // Getter methods for additional fields
+    private final String accountType;
+    private final double initialBalance;
+
+    public AccountOpenedEvent(String id, String accountType, double initialBalance) {
+        this.accountType = accountType;
+        this.initialBalance = initialBalance;
+    }
+
+    @Override
+    public String toString() {
+        return "AccountOpenedEvent{" +
+                "accountType='" + accountType + '\'' +
+                ", initialBalance=" + initialBalance +
+                '}';
+    }
 }

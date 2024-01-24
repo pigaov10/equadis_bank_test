@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Builder
-@Document(collection = "eventStore")
+@Document(collection = "accountEventStore")
 public class BankAccountEventModel {
     @Id
     private String id;

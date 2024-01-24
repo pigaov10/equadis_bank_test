@@ -1,14 +1,19 @@
 package com.equadis.events;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import lombok.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@SuperBuilder
+@Getter
 public class FundsDepositedEvent extends BaseEvent {
-    private double amount;
+    private final double amount;
+
+    public FundsDepositedEvent(double amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "FundsDepositedEvent{" +
+                "amount=" + amount +
+                '}';
+    }
 }
