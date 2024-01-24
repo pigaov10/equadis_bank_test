@@ -9,8 +9,14 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
+
     <modules>
         <module>account</module>
         <module>common</module>
+        <module>query</module>
     </modules>
 </project>

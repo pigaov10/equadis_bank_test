@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountAggregate extends AggregateRoot {
     public AccountAggregate(OpenAccountCommand command) {
-        raiseEvent(AccountOpenedEvent.builder()
+        System.out.println(AccountOpenedEvent.builder()
                 .accountType(AccountType.CHECKING_ACCOUNT.name())
                 .build());
     }
