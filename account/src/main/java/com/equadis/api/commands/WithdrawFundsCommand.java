@@ -1,4 +1,13 @@
 package com.equadis.api.commands;
 
-public class WithdrawFundsCommand {
+
+import com.equadis.infrastructure.BaseCommand;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
+
+@Data
+public class WithdrawFundsCommand extends BaseCommand {
+    private String id;
+    private double amount;
 }

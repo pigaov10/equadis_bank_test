@@ -10,5 +10,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class BaseEvent {
+    private String id;
     private int version;
 }

@@ -1,4 +1,10 @@
 package com.equadis.api.commands;
 
-public class DepositFundsCommand {
+import com.equadis.infrastructure.BaseCommand;
+import lombok.Data;
+
+
+@Data
+public class DepositFundsCommand extends BaseCommand {
+    private double amount;
 }

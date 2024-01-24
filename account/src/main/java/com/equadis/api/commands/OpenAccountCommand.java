@@ -6,4 +6,5 @@ import lombok.Data;
 @Data
 public class OpenAccountCommand extends BaseCommand {
     private String holder;
+    private double initialBalance;
 }

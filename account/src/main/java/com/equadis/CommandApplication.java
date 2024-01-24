@@ -1,5 +1,6 @@
 package com.equadis;
 
+import com.equadis.api.commands.WithdrawFundsCommand;
 import com.equadis.api.commands.handler.CommandHandler;
 import com.equadis.api.commands.OpenAccountCommand;
 import com.equadis.infrastructure.CommandDispatcher;
@@ -23,5 +24,6 @@ public class CommandApplication {
     @PostConstruct
     public void registerHandlers() {
         commandDispatcher.registerHandler(OpenAccountCommand.class, commandHandler::handle);
+        commandDispatcher.registerHandler(WithdrawFundsCommand.class, commandHandler::handle);
     }
 }

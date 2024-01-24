@@ -11,6 +11,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 public class AccountOpenedEvent extends BaseEvent {
+    private String id;
     private String accountType;
-    private final double initialAmount = 0;
+    private double initialAmount;
 }
